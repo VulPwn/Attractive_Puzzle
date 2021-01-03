@@ -1,21 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Orbiter.gd" type="Script" id=1]
 [ext_resource path="res://Orbiter_Collision.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-
-[sub_resource type="ParticlesMaterial" id=2]
-lifetime_randomness = 0.5
-emission_shape = 1
-emission_sphere_radius = 5.0
-flag_disable_z = true
-gravity = Vector3( 0, 98, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-radial_accel = 10.0
-damping = 5.0
-color = Color( 0.545098, 0.945098, 0.952941, 1 )
 
 [node name="Orbiter" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -24,10 +12,3 @@ script = ExtResource( 1 )
 visible = false
 shape = SubResource( 1 )
 script = ExtResource( 2 )
-
-[node name="Particles2D" type="Particles2D" parent="."]
-visible = false
-z_index = -1
-amount = 200
-speed_scale = 0.75
-process_material = SubResource( 2 )
